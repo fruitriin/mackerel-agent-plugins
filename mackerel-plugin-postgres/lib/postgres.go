@@ -161,9 +161,9 @@ func fetchConnections(db *sqlx.DB, version version) (map[string]interface{}, err
 		}
 		state = normalizeRe.ReplaceAllString(state, "_")
 		state = strings.TrimRight(state, "_")
-		if waiting {
-			state += "_waiting"
-		}
+		// if waiting {
+		// 	state += "_waiting"
+		// }
 		stat[state] = float64(count)
 	}
 
